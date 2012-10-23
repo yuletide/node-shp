@@ -1,0 +1,22 @@
+{
+  "name" : "shp",
+  "description" : "Convert shapefile zips into json without GDAL",
+  "version" : "0.0.1",
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/yuletide/node-shp"
+  },
+  "main" : "index.js",
+  "engines" : {
+    "node" : ">=0.6.x",
+    "npm" : "1.1.x"
+  },
+  "dependencies": {
+    "buffered-reader": "~1.0.1"
+  },
+  "devDependencies": {
+    "mocha":  "~1.4.1",
+    "chai": "~1.2.0",
+    "sinon": "~1.4.2"
+  }
+}
