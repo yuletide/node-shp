@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "FIPS": "AC", "ISO2": "AG", "ISO3": "ATG", "UN": 28, "NAME": "Antigua and Barbuda", "AREA": 44, "POP2005": 83039, "REGION": 19, "SUBREGION": 29, "LON": -61.783, "LAT": 17.078 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -61.686668, 17.024441000000152 ], [ -61.887222, 17.10527 ], [ -61.79445, 17.163330000000101 ], [ -61.686668, 17.024441000000152 ] ] ] } }
+
+]
+}
