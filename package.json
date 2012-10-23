@@ -1,6 +1,6 @@
 {
   "name" : "shp",
-  "description" : "Convert shapefile zips into json without GDAL",
+  "description" : "Convert shapefiles into geoJson without ogr2ogr/GDAL",
   "version" : "0.0.1",
   "repository" : {
     "type" : "git",
