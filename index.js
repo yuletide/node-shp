@@ -74,7 +74,7 @@ function getFeatures(url, callback) {
         }
         break;
       default:
-        throw(new Error("Error converting SHP to geojson"))
+        throw(new Error("Error converting SHP to geojson: Unsupported feature type"))
     }
 
     this.json.features.push(feature);
