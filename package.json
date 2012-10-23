@@ -11,12 +11,18 @@
     "node" : ">=0.6.x",
     "npm" : "1.1.x"
   },
-  "dependencies": {
-    "buffered-reader": "~1.0.1"
-  },
+  "keywords" : ["shp", "esri", "shapefile", "geo", "geojson", "mapping"],
   "devDependencies": {
     "mocha":  "~1.4.1",
     "chai": "~1.2.0",
     "sinon": "~1.4.2"
+  },
+  "author": {
+    "name" : "Alex Yule",
+    "email" : "alexy@codeforamerica.org",
+    "url" : "http://alexyule.com"
+  },
+  "scripts" : {
+    "test" : "mocha"
   }
 }

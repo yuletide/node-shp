@@ -25,6 +25,13 @@ still in testing stages
 	   	console.log(JSON.stringify(data));
    	})
 
+TODO
+====
+ - Allow to be run from commandline as executable
+ - Tests actually compare equality of results
+ - Tests for shapefiles with multiple features
+ - Separate out loading of file to allow preloading
+ - Proper support for multiPolygons, etc
 
 ###Sample Data
 http://thematicmapping.org/downloads/world_borders.php CC-BY-SA 3.0
