@@ -19,7 +19,7 @@ Usage
 still in testing stages
 
    	var Shp = require('index');
-   	var shpJson = Shp.readFileSync('path/to/shpfile.* or .zip');
+   	var shpJson = Shp.readFileSync('path/to/shpfile_base_name');
    	// or
    	Shp.readFile('path', function(error, data){
 	   	console.log(JSON.stringify(data));
