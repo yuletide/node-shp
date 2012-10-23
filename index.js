@@ -6,7 +6,7 @@ var Dbf = require(__dirname + '/lib/dbf'),
  */
 
 
-getFeatures("/Users/ayule/code/node-shp/demo/TM_WORLD_BORDERS_SIMPL/TM_WORLD_BORDERS_SIMPL-0.3", function(err, data){
+getFeatures("demo/TM_WORLD_BORDERS_SIMPL/TM_WORLD_BORDERS_SIMPL-0.3", function(err, data){
   console.log(JSON.stringify(data));
 });
 
