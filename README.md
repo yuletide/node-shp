@@ -16,17 +16,13 @@ Unlike substack's [shp2json](https://github.com/substack/shp2json), this library
 
 Usage
 ===================
-still in testing stages, working out what the final api will be. To run the rough demo:
+still in testing stages
 
-	node index.js > test.geojson
-
-   eventually...
-   
-   	var Shp = require('shp');
-   	var shpJson = Shp.readSync('path/to/shpfile.* or .zip');
+   	var Shp = require('index');
+   	var shpJson = Shp.readFileSync('path/to/shpfile.* or .zip');
    	// or
-   	var shpJson = Shp.read('path', function(error, data){
-   	
+   	Shp.readFile('path', function(error, data){
+	   	console.log(JSON.stringify(data));
    	})
 
 
