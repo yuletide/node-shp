@@ -18,7 +18,9 @@ Usage
 ===================
 still in testing stages
 
-   	var Shp = require('index');
+	> npm install shp
+
+   	var Shp = require('shp');
    	var shpJson = Shp.readFileSync('path/to/shpfile_base_name');
    	// or
    	Shp.readFile('path', function(error, data){
