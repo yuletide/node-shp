@@ -8,10 +8,11 @@ describe('Shapefile Reader', function() {
   it('Can correctly convert multiPolygon shapefile to GeoJSON', function(done){
     var good_json = JSON.parse(fs.readFileSync(__dirname + '/data/multipolygon.json', "utf8"));
     shpFile.readFile(__dirname + '/data/multipolygon', function(error, data){
-      expect(data.features[0].geometry.coordinates[0][0][0]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][0][0], 0.00001);
-      expect(data.features[0].geometry.coordinates[0][0][1]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][0][1], 0.00001);
-      expect(data.features[0].geometry.coordinates[0][1][0]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][1][0], 0.00001);
-      expect(data.features[0].geometry.coordinates[0][1][1]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][1][1], 0.00001);
+      expect(data.features[0].geometry.type).to.equal('MultiPolygon');
+      expect(data.features[0].geometry.coordinates[0][0][0][0]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][0][0][0], 0.00001);
+      expect(data.features[0].geometry.coordinates[0][0][0][1]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][0][0][1], 0.00001);
+      expect(data.features[0].geometry.coordinates[0][0][1][0]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][0][1][0], 0.00001);
+      expect(data.features[0].geometry.coordinates[0][0][1][1]).to.be.closeTo(good_json.features[0].geometry.coordinates[0][0][1][1], 0.00001);
     });
     done();
   });
