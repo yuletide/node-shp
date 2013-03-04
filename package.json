@@ -1,17 +1,20 @@
 {
   "name" : "shp",
   "description" : "Convert shapefiles into geoJson without ogr2ogr/GDAL",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "repository" : {
     "type" : "git",
-    "url" : "git://github.com/yuletide/node-shp"
+    "url" : "git://github.com/icetan/node-shp"
   },
   "main" : "index.js",
   "engines" : {
-    "node" : ">=0.6.x",
-    "npm" : "1.1.x"
+    "node" : ">=0.6",
+    "npm" : "~1.2.0"
   },
   "keywords" : ["shp", "esri", "shapefile", "geo", "geojson", "mapping"],
+  "dependencies": {
+    "iconv-lite": "~0.2.7"
+  },
   "devDependencies": {
     "mocha":  "~1.4.1",
     "chai": "~1.2.0",
@@ -22,6 +25,7 @@
     "email" : "alexy@codeforamerica.org",
     "url" : "http://alexyule.com"
   },
+  "contributors": ["Christopher Fredén"],
   "scripts" : {
     "test" : "mocha"
   }
