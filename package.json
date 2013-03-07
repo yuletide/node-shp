@@ -4,7 +4,7 @@
   "version" : "0.0.2",
   "repository" : {
     "type" : "git",
-    "url" : "git://github.com/icetan/node-shp"
+    "url" : "git://github.com/yuletide/node-shp"
   },
   "main" : "index.js",
   "engines" : {
