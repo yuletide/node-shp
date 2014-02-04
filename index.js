@@ -43,7 +43,8 @@ function getFeatures(url, callback) {
       geometry: {},
       properties: {}
     };
-//    console.log(record);
+    // TODO: Crashes here when a Shape file has been appended to and number of
+    // records do not match in .shp and .dbf.
     feature.properties = attrs.values;
 
     switch(record.shapeType) {
@@ -60,18 +61,28 @@ function getFeatures(url, callback) {
         }
         break;
       case Shp.ShpType.SHAPE_POLYGON:
+        var coordinates = [],
+            j, len,
+            ring, featureRing;
         feature.geometry.type = Shp.GeoJsonType[record.shapeType];
         feature.geometry.coordinates = [];
-        var ringsLen = record.shape.rings.length;
-        for (var j = 0; j < ringsLen; j++) {
-          var ring = record.shape.rings[j];
+        for (j = 0, len = record.shape.rings.length; j < len; j++) {
+          ring = record.shape.rings[j];
           if (ring.length < 1) continue;
-          var featureRing = feature.geometry.coordinates[j] = [];
-          var ringLen = ring.length;
-          for (var k = 0; k < ringLen; k++) {
-            featureRing.push([ring[k].x, ring[k].y]);
+          featureRing = ring.map(function(point) {
+            return [point.x, point.y];
+          });
+          if (coordinates.length > 0 && ring.isClockwise) {
+            feature.geometry.type = 'MultiPolygon';
+            feature.geometry.coordinates.push(coordinates);
+            coordinates = [];
           }
+          coordinates.push(featureRing);
         }
+        if (feature.geometry.coordinates.length === 0)
+          feature.geometry.coordinates = coordinates;
+        else
+          feature.geometry.coordinates.push(coordinates);
         break;
       default:
         throw(new Error("Error converting SHP to geojson: Unsupported feature type"))
