@@ -3,7 +3,7 @@
 var fs = require('fs')
   , shp = require('../');
 
-if (process.argv.indexOf('--help') !== -1 || process.argv.indexOf('-h') !== -1 || process.argv.length == 2) {
+if (process.argv.indexOf('--help') !== -1 || process.argv.indexOf('-h') !== -1 || process.argv.length === 2) {
   console.log('Usage: node-shp {infile} {outfile|-}');
   process.exit(0);
 }
