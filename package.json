@@ -26,6 +26,9 @@
     "url" : "http://alexyule.com"
   },
   "contributors": ["Christopher Fredén"],
+  "bin": {
+    "node-shp": "./bin/node-shp"
+  },
   "scripts" : {
     "test" : "mocha"
   }

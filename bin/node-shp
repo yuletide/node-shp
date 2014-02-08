@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+  , shp = require('../');
+
+if (process.argv.indexOf('-h') !== -1 || process.argv.length == 2) {
+  console.log('Usage: node-shp {infile} {outfile|-}');
+  process.exit(0);
+}
+
+var inFile = process.argv[2];
+var outFile = process.argv[3] || '-';
+
+var outStream = outFile === '-'
+  ? process.stdout
+  : fs.createWriteStream(outFile)
+;
+
+shp.readFile(inFile, function (err, data) {
+  if (err) {
+    console.error('Error parsing ' + inFile + ':', err);
+    process.exit(1);
+  }
+  else {
+    outStream.write(JSON.stringify(data));
+  }
+});
